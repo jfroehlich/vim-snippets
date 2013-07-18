@@ -1,0 +1,15 @@
+
+
+snippet model "model class" !b
+class ${1:MyModel}(models.Model):
+	$0
+endsnippet
+
+
+snippet char "char field"
+models.CharField(${1:max_length=${2:200}}$3)$0
+endsnippet
+
+snippet char "CharField" !b
+${1:name} = models.CharField(${2:max_length=${3:200}}$4)$0
+endsnippet
