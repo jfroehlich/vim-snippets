@@ -1,0 +1,69 @@
+clearsnippets
+
+# Variables & properties
+
+snippet v "simple variable declaration"
+var ${1:obj} = $2;
+$0
+endsnippet
+
+snippet : "key:value"
+${1:key}: ${2:"${3:value}"}${4:, }
+endsnippet
+
+# Functions & methods
+
+snippet f "Function" b
+/**
+ * $3
+ */
+function ${1:name}($2) {
+	${4: // body}
+}
+$0
+endsnippet
+
+snippet f "Anonymous function" i
+function ($1) {
+	${2:// body...}
+}$0
+endsnippet
+
+snippet :f "object method"
+${1:method_name}: function (${2:attribute}) {
+	${3:// body...}
+}${10:,}
+$0
+endsnippet
+
+snippet closure "Closure" b
+(function (${1:window}, undefined) {
+	${2:// body...}
+}($1));
+$0
+endsnippet
+
+snippet proto "Prototype (proto)"
+${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) ,,{
+	${0:// body...}
+};
+
+# misc
+
+snippet ?: "Ternary operator" b
+var $1 = ${2:(${3:question})} ? ${4:true} : ${5:false};
+endsnippet
+
+snippet if "if comparator"
+if ($1) {
+	$2
+} $4
+$0
+endsnippet
+
+snippet else "else comparator"
+else {
+	$1
+}$2
+$0
+endsnippet
