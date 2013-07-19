@@ -1,0 +1,19 @@
+clearsnippets
+
+snippet html5 "html5 boilerplate" !b
+<!DOCTYPE html>
+<html lang="${1:en}">
+<head>
+	<meta charset="utf-8" />
+	<title>${2:example page}</title>
+	$3
+</head>
+<body${4:${5: id="$6"}${7: class="$8"}}>
+	$0
+</body>
+</html>
+endsnippet
+
+snippet script "script tag" !b
+<script type="text/javascript"${1: src="$2"}>$0</script>
+endsnippet

@@ -1,4 +1,5 @@
 
+# Snippets for django models
 
 snippet model "model class" !b
 class ${1:MyModel}(models.Model):
@@ -39,12 +40,39 @@ endsnippet
 
 # Numbers
 
+snippet int "integer field inline"
+models.IntegerField($1)$0
+endsnippet
+
+snippet int "integer field field" !b
+${1:name} = models.IntegerField($2)$0
+endsnippet
+
+
 snippet bigint "big integer field inline"
 models.BigIntegerField($1)$0
 endsnippet
 
 snippet bigint "big integer field field" !b
 ${1:name} = models.BigIntegerField($2)$0
+endsnippet
+
+
+snippet float "float field inline"
+models.FloatField($1)$0
+endsnippet
+
+snippet float "float field field" !b
+${1:name} = models.FloatField($2)$0
+endsnippet
+
+
+snippet dec "decimal field inline"
+models.DecimalField(max_digits=${1:11}, decimal_places=${2:2}$1)$0
+endsnippet
+
+snippet dec "decimal field field" !b
+${1:name} = models.DecimalField(max_digits=${2:11}, decimal_places=${3:2}$2)$0
 endsnippet
 
 
@@ -55,6 +83,7 @@ endsnippet
 snippet char "comma separated integer field" !b
 ${1:name} = models.CommaSeparatedIntegerField(${2:max_length=${3:200}}$4)$0
 endsnippet
+
 
 # dates
 
@@ -81,6 +110,24 @@ snippet file "file field inline"
 models.FileField(${1:upload_to}$2)$0
 endsnippet
 
-snippet file "file field field" !b
+snippet file "file field" !b
 ${1:name} = models.FileField(${2:upload_to}$3)$0
+endsnippet
+
+
+snippet file "file path field inline"
+models.FilePathField(upload_to="$2"$3)$0
+endsnippet
+
+snippet file "file path field" !b
+${1:name} = models.FilePathField(upload_to="$2"$3)$0
+endsnippet
+
+
+snippet img "image field inline"
+models.ImageField(upload_to="$2"${3:, height_field=${4:None}}${5:, width_field=${6:None}}${7:, max_length=$8}}$9)$0
+endsnippet
+
+snippet img "image field" !b
+${1:name} = models.ImageField(upload_to="$2"${3:, height_field=${4:None}}${5:, width_field=${6:None}}${7:, max_length=$8}}$9)$0
 endsnippet
