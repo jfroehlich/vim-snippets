@@ -6,10 +6,81 @@ class ${1:MyModel}(models.Model):
 endsnippet
 
 
-snippet char "char field"
-models.CharField(${1:max_length=${2:200}}$3)$0
+# booleans
+
+snippet bool "boolean field inline"
+models.BooleanField($1)$0
 endsnippet
 
-snippet char "CharField" !b
-${1:name} = models.CharField(${2:max_length=${3:200}}$4)$0
+snippet bool "boolean field field" !b
+${1:name} = models.BooleanField($2)$0
+endsnippet
+
+
+# text 
+
+snippet char "char field inline"
+models.CharField(max_length=${1:200}$3)$0
+endsnippet
+
+snippet char "char field" !b
+${1:name} = models.CharField(max_length=${2:200}$4)$0
+endsnippet
+
+
+snippet email "email field inline"
+models.EmailField(${1:max_length=${2:75}}$3)$0
+endsnippet
+
+snippet email "email field" !b
+${1:name} = models.EmailField(${2:max_length=${3:75}}$4)$0
+endsnippet
+
+
+# Numbers
+
+snippet bigint "big integer field inline"
+models.BigIntegerField($1)$0
+endsnippet
+
+snippet bigint "big integer field field" !b
+${1:name} = models.BigIntegerField($2)$0
+endsnippet
+
+
+snippet commaint "comma separated integer field inline"
+models.CommaSeparatedIntegerField(${1:max_length=${2:200}}$3)$0
+endsnippet
+
+snippet char "comma separated integer field" !b
+${1:name} = models.CommaSeparatedIntegerField(${2:max_length=${3:200}}$4)$0
+endsnippet
+
+# dates
+
+snippet date "date field inline"
+models.DateField(${1:auto_now=true}${2:, }${3:auto_now_add=true})$0
+endsnippet
+
+snippet date "date field field" !b
+${1:name} = models.DateTimeField(${2:auto_now=true}${3:, }${4:auto_now_add=true})$0
+endsnippet
+
+
+snippet datetime "date time field inline"
+models.DateTimeField(max_digits=${1:6}, decimal_places=${2:2})$0
+endsnippet
+
+snippet datetime "date time field field" !b
+${1:name} = models.DateTimeField(max_digits=${2:6}, decimal_places=${3:2})$0
+endsnippet
+
+# uploads
+
+snippet file "file field inline"
+models.FileField(${1:upload_to}$2)$0
+endsnippet
+
+snippet file "file field field" !b
+${1:name} = models.FileField(${2:upload_to}$3)$0
 endsnippet
